@@ -30,16 +30,17 @@
 // test
 
 
-const fs = require("fs");
-const fk = fs.readFileSync("/dev/stdin", "utf8");
-const g = fk.split("\n");
-const a = parseInt(g[0]);
-const value =g[1].split(" ");
-const b = parseInt(value[0]);
-const c = parseInt(value[1]);
-const s =g[2];
-const sum = a + b + c;
-console.log(sum + " " + s);
+
+
+const input = require("fs").readFileSync("/dev/stdin", "utf8").trim().split("\n");
+
+const a = Number(input[0]);
+const [b, c] = input[1].split(" ").map(Number);
+const s = input[2];
+
+console.log(a + b + c + " " + s);
+
+
 
 
 
