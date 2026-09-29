@@ -1,5 +1,4 @@
 // Placing Marbles
-
 // Problem Statement
 // Snuke has a grid consisting of three squares numbered 
 // 1, 
@@ -62,17 +61,49 @@
 
 
 
-const fk = require("fs").readFileSync("/dev/stdin", "utf8");
-const input = fk.split("\n");
-const a = input[0].split("").map(Number);
-count=0;
-for (i =0; i<=a.length; i++){
-    if (a[i]===1){
-     count += a[i];
-        }
+// const fk = require("fs").readFileSync("/dev/stdin", "utf8");
+// const input = fk.split("\n");
+// const a = input[0].split("").map(Number);
+// count=0;
+// for (i =0; i<=a.length; i++){
+//     if (a[i]===1){
+//      count += a[i];
+//         }
   
+// }
+// console.log(count);
+
+const n = 3;
+const arr =[4,12,40];
+let count =0;
+let b =true;
+
+if (n === arr.length){
+   while(b){
+        b=true;
+        let i =0;
+        for(i =0; i<=arr.length -1; i++){
+            if (arr[i] % 2 !== 0 || arr[i] < 0 ){
+                b = false;
+                break;
+            }
+ }
+
+  if (b === false){
+            break;
+        }
+
+        
+      for(i =0; i<=arr.length -1; i++){
+        arr[i]=arr[i]/2
+       }
+       count++;
+  }
 }
-console.log(count);
+console.log(count);   
+
+
+
 
 
 

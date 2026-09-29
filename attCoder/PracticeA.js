@@ -42,7 +42,13 @@ console.log(a + b + c + " " + s);
 
 
 
+// let arr = [3,4,5];
+// for(let i =0; i<=arr.length-1; i++){
+//      arr[i]=arr[i]*2;
+    
+// }
 
+// console.log(arr);
 
 
 
