@@ -22,10 +22,14 @@
 # // a+b+c and string 
 # // s with a half-width break in one line.
 
-a=int(input())
-b,c=map(int,input().split())
-string = input()
+# a=int(input())
+# b,c=map(int,input().split())
+# string = input()
 
 
-print(a+b+c,string)
+# print(a+b+c,string)
+
+num =123
+for i in num:
+    print(i)
 
