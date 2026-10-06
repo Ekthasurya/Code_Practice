@@ -99,3 +99,4 @@ if a == len(b):
     if b[j] not in newarr:
       newarr.append(b[j])
 print(len(newarr))
+

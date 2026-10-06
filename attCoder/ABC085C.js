@@ -1,0 +1,120 @@
+// Otoshidama  / 
+// Time Limit: 2 sec / Memory Limit: 256 MiB
+
+// Score : 
+// 300 points
+
+// Problem Statement
+// The commonly used bills in Japan are 
+// 10000-yen, 
+// 5000-yen and 
+// 1000-yen bills. Below, the word "bill" refers to only these.
+
+// According to Aohashi, he received an otoshidama (New Year money gift) envelope from his grandfather that contained 
+// N bills for a total of 
+// Y yen, but he may be lying. Determine whether such a situation is possible, and if it is, find a possible set of bills contained in the envelope. Assume that his grandfather is rich enough, and the envelope was large enough.
+
+// Constraints
+// 1≤N≤2000
+// 1000≤Y≤2×10 
+// 7
+ 
+// N is an integer.
+// Y is a multiple of 
+// 1000.
+// Input
+// Input is given from Standard Input in the following format:
+
+// N 
+// Y
+// Output
+// If the total value of 
+// N bills cannot be 
+// Y yen, print -1 -1 -1.
+
+// If the total value of 
+// N bills can be 
+// Y yen, let one such set of bills be "
+// x 
+// 10000-yen bills, 
+// y 
+// 5000-yen bills and 
+// z 
+// 1000-yen bills", and print 
+// x, 
+// y, 
+// z with spaces in between. If there are multiple possibilities, any of them may be printed.
+
+// Sample Input 1
+// Copy
+// 9 45000
+// Sample Output 1
+// Copy
+// 4 0 5
+// If the envelope contained 
+// 4 
+// 10000-yen bills and 
+// 5 
+// 1000-yen bills, he had 
+// 9 bills and 
+// 45000 yen in total. It is also possible that the envelope contained 
+// 9 
+// 5000-yen bills, so the output 0 9 0 is also correct.
+
+// Sample Input 2
+// Copy
+// 20 196000
+// Sample Output 2
+// Copy
+// -1 -1 -1
+// When the envelope contained 
+// 20 bills in total, the total value would be 
+// 200000 yen if all the bills were 
+// 10000-yen bills, and would be at most 
+// 195000 yen otherwise, so it would never be 
+// 196000 yen.
+
+// Sample Input 3
+// Copy
+// 1000 1234000
+// Sample Output 3
+// Copy
+// 14 27 959
+// There are also many other possibilities.
+
+// Sample Input 4
+// Copy
+// 2000 20000000
+// Sample Output 4
+// Copy
+// 2000 0 0
+
+const fs = require("fs");
+const fk = fs.readFileSync("/dev/stdin", "utf8");
+let input = fk.split(" ")
+let a = parseInt(input[0]);
+let b = parseInt(input[1]);
+let found =false
+for (let x = 0; x <= a; x++) {
+    for (let y = 0; y <= a; y++) {
+        let z = a - x - y;
+        if (z < 0) {
+            continue;
+        }
+
+            if(x+y+z ===a && 10000*x + 5000*y + 1000*z === b){
+                console.log(x,y,z)
+                found =true
+                break;
+            }
+        
+    }
+    if(found){
+      break;
+    }
+}
+if(!found){
+console.log(-1, -1, -1);
+               
+}
+
